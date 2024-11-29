@@ -15,10 +15,6 @@ _trace_installed = False
 def initialize(logFilePath: str = ""):
     install_trace_logger()
 
-    # logging.basicConfig(level=logging.DEBUG)
-    # logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s', level=logging.DEBUG)
-    # logging.basicConfig(format='%(asctime)s %(message)s', filename='waterflowers.log', level=logging.INFO)
-
     if logFilePath != "" and not logFilePath.endswith("/"):
         logFilePath = logFilePath + "/"
 
@@ -28,7 +24,7 @@ def initialize(logFilePath: str = ""):
         level=logging.DEBUG,
         format="%(asctime)s [%(levelname)s] %(message)s",
         handlers=[
-            logging.handlers.TimedRotatingFileHandler(logFilePath + 'eversports-notifier.log', when='midnight',
+            logging.handlers.TimedRotatingFileHandler(logFilePath + 'tennis-court-wiping-optimizer.log', when='midnight',
                                                       interval=1, backupCount=3, encoding=None, delay=False, utc=False,
                                                       atTime=None),
             logging.StreamHandler()

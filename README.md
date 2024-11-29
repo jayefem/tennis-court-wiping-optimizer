@@ -32,6 +32,9 @@ are the order of the lines that have to be wiped.
 
 ![Canonical path](./docs/Canonical_path.png)
 
+That's indeed not so bad. In fact, the wiping path is shorter than of the optimized ones. However, the last step going 
+back to the starting point is too long. That's why the overall path lenght is longer than of the optimized versions:
+
 ![Canonical path steps](./docs/Canonical_path_steps.png)
 
 ## Tennis court dimensions
@@ -70,6 +73,8 @@ Import Virtual environment (Venv) in Windows to this project folder:
 .\venv\Scripts\python.exe .\src\main\python\main.py
 ```
 
+Or run in PyCharm.
+
 ## Implementation details
 
 ### Algorithm
@@ -77,7 +82,7 @@ Import Virtual environment (Venv) in Windows to this project folder:
 The lines of the tennis court are stored in an array. Each item contains a start and an end point as a coordinate. The
 starting point of the baseline on the right has the coordinates (0, 0).
 
-The algorithm starts at a given coordinate and iterates through all possible points of the array. When it turns out that
+The algorithm starts at a given coordinate and iterates through all possible points of the array of court lines. When it turns out that
 the current path is less optimal than the latest calculated optimized path, the path is pruned by the
 method `prunePath()` in `LineWalker.py`. If a new optimized path is found which is better as the one before, it
 replaces the previous one. As there's no calculated optimized path in the beginning of the algorithm,
